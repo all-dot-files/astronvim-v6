@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
@@ -23,20 +21,19 @@ return {
     "folke/snacks.nvim",
     opts = {
       dashboard = {
-        preset = {
-          header = table.concat({
-            " █████  ███████ ████████ ██████   ██████ ",
-            "██   ██ ██         ██    ██   ██ ██    ██",
-            "███████ ███████    ██    ██████  ██    ██",
-            "██   ██      ██    ██    ██   ██ ██    ██",
-            "██   ██ ███████    ██    ██   ██  ██████ ",
-            "",
-            "███    ██ ██    ██ ██ ███    ███",
-            "████   ██ ██    ██ ██ ████  ████",
-            "██ ██  ██ ██    ██ ██ ██ ████ ██",
-            "██  ██ ██  ██  ██  ██ ██  ██  ██",
-            "██   ████   ████   ██ ██      ██",
-          }, "\n"),
+        enabled = true,
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+          {
+            section = "terminal",
+            cmd = "ascii-image-converter \"$(find $HOME/.config/${NVIM_APPNAME:-nvim}/assets -name 'dashboard.*' -print -quit)\" -b -C",
+            random = 10,
+            pane = 2,
+            indent = 4,
+            height = 30,
+          },
         },
       },
     },

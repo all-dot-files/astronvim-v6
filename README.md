@@ -6,6 +6,19 @@ A template for getting started with [AstroNvim](https://github.com/AstroNvim/Ast
 
 ## 🛠️ Installation
 
+#### Prerequisites
+
+[ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter) is required to display the logo.
+
+Install it using your package manager or from source.
+```shell
+brew install ascii-image-converter
+```
+or
+```shell
+go install github.com/TheZoraiz/ascii-image-converter@latest
+```
+
 #### Make a backup of your current nvim and shared folder
 
 ```shell
@@ -24,11 +37,17 @@ You can also just clone this repository directly if you do not want to track you
 #### Clone the repository
 
 ```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+git clone https://github.com/all-dot-files/astronvim-v6.git ~/.config/nvim
 ```
 
 #### Start Neovim
 
 ```shell
 nvim
+```
+
+or
+
+```shell
+NVIM_APPNAME=own_app nvim
 ```

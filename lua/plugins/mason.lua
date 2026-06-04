@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Mason
 
 ---@type LazySpec
@@ -18,11 +16,24 @@ return {
         "stylua",
 
         -- install debuggers
-        "debugpy",
+        -- "debugpy",
 
         -- install any other package
         "tree-sitter-cli",
       },
     },
   },
+  {
+    {
+      "mason-org/mason.nvim",
+      opts = {
+        registries = {
+          "github:mason-org/mason-registry",
+          "github:zdelv/pyrefly-mason-registry",
+        },
+      },
+    },
+  },
+  -- { "mason-lspconfig.nvim", opts = { automatic_installation = false } },
+  -- { "mason-nvim-dap.nvim", opts = { automatic_installation = false } },
 }

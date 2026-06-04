@@ -1,0 +1,26 @@
+return {
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "AstroNvim/astrocore" },
+    opts = function(_, opts)
+      local actions = require "telescope.actions"
+      return require("astrocore").extend_tbl(opts, {
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-n>"] = actions.move_selection_next,
+              ["<C-p>"] = actions.move_selection_previous,
+              ["<C-j>"] = actions.cycle_history_next,
+              ["<C-k>"] = actions.cycle_history_prev,
+            },
+          },
+        },
+      })
+    end,
+  },
+  {
+    "matkrin/telescope-spell-errors.nvim",
+    config = function() require("telescope").load_extension "spell_errors" end,
+    dependencies = "nvim-telescope/telescope.nvim",
+  },
+}
